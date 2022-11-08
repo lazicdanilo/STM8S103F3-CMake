@@ -31,7 +31,7 @@ pacman -S git libusb pkg-config
 git clone git@github.com:vdudouyt/stm8flash.git /tmp/stm8flash && make -C /tmp/stm8flash && sudo make install -C /tmp/stm8flash
 ```
 
-## Compile code uisng CMake and Make
+## Compile code using CMake and Make
 
 The following commands can be used for compiling the code
 
@@ -43,7 +43,7 @@ make
 
 Code can also be compiled using the `compile-me.sh` script
 
-## Download to board using stm8flash
+## Download to board using stm8flash and ST-LINK V2
 
 The following command can be used to download code to board
 
@@ -51,7 +51,7 @@ The following command can be used to download code to board
 stm8flash -c stlinkv2 -p stm8s103f3 -s flash -w compiled_code.ihx
 ```
 
-For download `compile-me.sh` script can be used as well. 
+For download `compile-me.sh` script can be used as well.
 
 ## compile-me.sh script usage
 
@@ -68,3 +68,16 @@ For download `compile-me.sh` script can be used as well.
 # Print help
 ./compile-me.sh -h
 ```
+
+## Hardware used
+
+### ST-LINK V2
+
+Used for downloading the code
+![ST-LINK_V2](https://github.com/lazicdanilo/STM8S103F3-CMake/blob/main/assets/pics/ST-LINK_V2.jpeg?raw=true)
+
+### STM8103F3 board
+
+![STM8103F3_board](https://github.com/lazicdanilo/STM8S103F3-CMake/blob/main/assets/pics/STM8103F3_board.jpeg?raw=true)
+
+![STM8103F3_board_pinout](https://github.com/lazicdanilo/STM8S103F3-CMake/blob/main/assets/pics/STM8103F3_board_pinout.png?raw=true)
