@@ -74,6 +74,7 @@ For download `compile-me.sh` script can be used as well.
 ### ST-LINK V2
 
 Used for downloading the code
+
 ![ST-LINK_V2](https://github.com/lazicdanilo/STM8S103F3-CMake/blob/main/assets/pics/ST-LINK_V2.jpeg?raw=true)
 
 ### STM8103F3 board
