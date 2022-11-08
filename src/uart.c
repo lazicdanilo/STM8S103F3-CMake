@@ -48,7 +48,7 @@ void uart_init() {
 }
 
 /**
- * @brief Sends data from buffer over UART in pooling mode
+ * @brief Sends data from buffer over UART in polling mode
  * @param tx_buffer Pointer to the buffer from which we want to send data
  * @param tx_size Size of the data we want to send
  */
@@ -61,16 +61,16 @@ uint8_t uart_tx(uint8_t *tx_buffer, uint8_t tx_size) {
 }
 
 /**
- * @brief Receives data from UART in pooling mode
+ * @brief Receives data from UART in polling mode
  * @param rx_buffer Pointer to the buffer to which we want to save received data
  * @param rx_size Size of the data we want to receive
- * @param timeout_100_ms Timeout in 100s of ms
+ * @param timeout_ms Timeout in ms
  */
-uint8_t uart_rx(uint8_t *rx_buffer, uint8_t rx_size, uint16_t timeout_100_ms) {
+uint8_t uart_rx(uint8_t *rx_buffer, uint8_t rx_size, uint16_t timeout_ms) {
     uint32_t start_tick = get_tick();
     for(uint8_t i = 0; i < rx_size; ++i) {
         while(!(UART1->SR & (uint8_t)UART1_FLAG_RXNE)) {
-            if ((start_tick + timeout_100_ms) < get_tick()) {
+            if ((start_tick + timeout_ms) < get_tick()) {
                 return 1;   /* Timeout ocurred */
             }
         }
