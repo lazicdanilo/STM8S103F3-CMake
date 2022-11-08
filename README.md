@@ -31,7 +31,29 @@ pacman -S git libusb pkg-config
 git clone git@github.com:vdudouyt/stm8flash.git /tmp/stm8flash && make -C /tmp/stm8flash && sudo make install -C /tmp/stm8flash
 ```
 
-## Compile project (Using compile-me.sh script)
+## Compile code uisng CMake and Make
+
+The following commands can be used for compiling the code
+
+```bash
+mkdir build && cd build
+cmake ..
+make
+```
+
+Code can also be compiled using the `compile-me.sh` script
+
+## Download to board using stm8flash
+
+The following command can be used to download code to board
+
+```bash
+stm8flash -c stlinkv2 -p stm8s103f3 -s flash -w compiled_code.ihx
+```
+
+For download `compile-me.sh` script can be used as well. 
+
+## compile-me.sh script usage
 
 ```bash
 # Compile the project 
@@ -45,5 +67,4 @@ git clone git@github.com:vdudouyt/stm8flash.git /tmp/stm8flash && make -C /tmp/s
 
 # Print help
 ./compile-me.sh -h
-
 ```
